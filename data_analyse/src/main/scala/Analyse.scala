@@ -10,15 +10,16 @@ object Analyse {
 
   def main(args: Array[String]): Unit = {
 
+   // val PATH_TO_FILES = "data_analyse/src/main/resources/*"
+
     val PATH_TO_FILES = "data_analyse/src/main/resources/*"
-  //  val PATH_TO_FILES_2 = "data_analyse/src/main/resources/NewRelease.csv"
+    //  val PATH_TO_FILES_2 = "data_analyse/src/main/resources/NewRelease.csv"
 
     val spark = SparkSession
       .builder()
       .appName("Analyse")
       .master("local[*]")
       .getOrCreate()
-
 
     println("**************** Read Files ***********************")
 
@@ -55,9 +56,11 @@ object Analyse {
       .save("data_analyse/src/main/resources/mydata.csv")
 
 
+  println(" Ecriture dans la table hive ")
+   // df_populaire.write.mode("overwrite").saveAsTable("iabd2_groupe_7.populaire_singers")
 
 
-
+    println("fin d'ecriture dans la table hive")
 
 
     // Les artistes et leurs nombres d'albums.
