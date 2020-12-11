@@ -13,6 +13,7 @@ object Analyse {
    // val PATH_TO_FILES = "data_analyse/src/main/resources/*"
 
     val PATH_TO_FILES = "data_analyse/src/main/resources/*"
+    val PATH_TO_FILES = arg(0)
     //  val PATH_TO_FILES_2 = "data_analyse/src/main/resources/NewRelease.csv"
 
     val spark = SparkSession
